@@ -44,7 +44,7 @@ lazy val cross = crossProject(JSPlatform, JVMPlatform).crossType(CrossType.Full)
       Dependencies.zioTestMagnolia,
       Dependencies.dataimportcsv3s,
       Dependencies.zioHttpTest
-  
+
     )
 
 
@@ -55,7 +55,7 @@ lazy val cross = crossProject(JSPlatform, JVMPlatform).crossType(CrossType.Full)
 
 
     // scalaJSUseMainModuleInitializer := true
-    
+
   )
 
 
@@ -67,10 +67,9 @@ lazy val server = (project in file("modules/server"))
     autoAPIMappings                 := true,
     scalaJSUseMainModuleInitializer := true,
     libraryDependencies ++= Dependencies.jsclientlibraries.value,
-    Compile / mainClass             := Some(("org.axiom.server.MainApp"))
+    Compile / mainClass             := Some(("com.axiom.server.MainApp"))
   )
-  .enablePlugins(ScalaJSPlugin)
-  .dependsOn(cross.js)
+  .dependsOn(cross.jvm)
 
   lazy val client = (project in file("modules/client"))
   .enablePlugins(ScalaJSPlugin) // Enable the Scala.js plugin in this project
