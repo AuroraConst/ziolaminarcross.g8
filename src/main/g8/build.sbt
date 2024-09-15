@@ -62,10 +62,8 @@ lazy val cross = crossProject(JSPlatform, JVMPlatform).crossType(CrossType.Full)
 
 lazy val server = (project in file("modules/server"))
   .settings(
-    scalaJSLinkerConfig ~= { _.withModuleKind(ModuleKind.CommonJSModule) },
     semanticdbEnabled               := true,
     autoAPIMappings                 := true,
-    scalaJSUseMainModuleInitializer := true,
     libraryDependencies ++= Dependencies.jsclientlibraries.value,
     Compile / mainClass             := Some(("com.axiom.server.MainApp"))
   )
