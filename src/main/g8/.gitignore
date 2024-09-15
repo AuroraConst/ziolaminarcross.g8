@@ -21,6 +21,8 @@ dist
 .metals/
 build/
 .scala_build/
+.metals/
+.bsp/
 /RUNNING_PID
 .settingsz
 .DS_Store
