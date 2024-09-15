@@ -11,7 +11,7 @@ object MainApp extends ZIOAppDefault :
   //TODO MAYBE NOT NEEDED
   val config: CorsConfig =
   CorsConfig(
-    allowezdOrigin = {  //allows origin from vite server to access routes on server
+    allowedOrigin = {  //allows origin from vite server to access routes on server
       case origin if origin == Origin.parse("http://localhost:5173").toOption.get =>
         Some(AccessControlAllowOrigin.Specific(origin))
       case _  => None
