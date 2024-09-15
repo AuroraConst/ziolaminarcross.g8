@@ -10,7 +10,7 @@ import scala.scalajs.js.annotation.JSImport
 
 object Main {
   def consoleOut(msg: String): Unit = {
-     dom.console.log(s"%c $msg","background: #222; color: #bada55")
+     dom.console.log(s"%c \$msg","background: #222; color: #bada55")
   }
   @main def entrypoint(): Unit = 
 
