@@ -35,17 +35,7 @@ lazy val cross = crossProject(JSPlatform, JVMPlatform).crossType(CrossType.Full)
     ThisBuild / semanticdbEnabled := true,
     ThisBuild / semanticdbVersion := scalafixSemanticdb.revision,
     ThisBuild / scalafixDependencies ++= List("com.github.liancheng" %% "organize-imports" % "0.6.0"),
-
-
-    libraryDependencies ++= Seq(
-      Dependencies.zioHttp, 
-      Dependencies.zioTest,
-      Dependencies.zioTestSBT, 
-      Dependencies.zioTestMagnolia,
-      Dependencies.dataimportcsv3s,
-      Dependencies.zioHttpTest
-
-    )
+    libraryDependencies += Dependencies.dataimportcsv3s
 
 
   ).
@@ -64,8 +54,18 @@ lazy val server = (project in file("modules/server"))
   .settings(
     semanticdbEnabled               := true,
     autoAPIMappings                 := true,
-    libraryDependencies ++= Dependencies.jsclientlibraries.value,
-    Compile / mainClass             := Some(("com.axiom.server.MainApp"))
+    Compile / mainClass             := Some(("com.axiom.server.MainApp")),
+    
+    libraryDependencies ++= Seq(
+      Dependencies.zioHttp, 
+      Dependencies.zioTest,
+      Dependencies.zioTestSBT, 
+      Dependencies.zioTestMagnolia,
+      Dependencies.dataimportcsv3s,
+      Dependencies.zioHttpTest
+    )
+
+
   )
   .dependsOn(cross.jvm)
 
