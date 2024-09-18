@@ -2,7 +2,7 @@ import org.scalablytyped.converter.internal.scalajs.Dep
 import org.scalajs.linker.interface.ModuleSplitStyle
 
 ThisBuild / version      := "0.1.0-SNAPSHOT"
-ThisBuild / organization := "org.aurora"
+ThisBuild / organization := "$organization$"
 ThisBuild / scalaVersion := DependencyVersions.scalaVersion
 
 ThisBuild / scalacOptions ++= Seq(
