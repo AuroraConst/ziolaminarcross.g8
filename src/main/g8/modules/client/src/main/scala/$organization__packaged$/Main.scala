@@ -1,4 +1,5 @@
-package com.axiom
+package $organization$
+
 
 
 import com.raquo.laminar.api.L.{*, given}

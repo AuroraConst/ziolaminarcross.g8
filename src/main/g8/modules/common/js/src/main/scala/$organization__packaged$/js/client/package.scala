@@ -1,4 +1,5 @@
-package com.axiom.js
+package $organization$.js
+
 
 package object client :
   import com.raquo.laminar.api.L.{*, given}

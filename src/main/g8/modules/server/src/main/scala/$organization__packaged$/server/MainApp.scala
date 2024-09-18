@@ -1,5 +1,6 @@
-package com.axiom.server
+package $organization$.server
 
+ 
 import zio._
 import zio.http._
 import zio.http.endpoint._

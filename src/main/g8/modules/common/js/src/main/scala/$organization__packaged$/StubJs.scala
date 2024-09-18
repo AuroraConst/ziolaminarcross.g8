@@ -1,5 +1,6 @@
-package com.axiom
+package $organization$
 
 class StubJs {
 
 }
+
